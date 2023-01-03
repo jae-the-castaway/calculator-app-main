@@ -1,0 +1,176 @@
+@import "./templates.css";
+
+div, main, button, form{
+    border-radius: 10px;
+    border: 0;
+}
+                    /* General section */
+
+:root {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    background-color: var(--main-background);
+    color: var(--light-text);
+}
+
+
+.calculator {
+    margin: 50px 30px;
+}
+
+                    /* display section */
+
+.title-panel {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(113px, 140px));
+    justify-content: center;
+    margin: 0 auto;
+    max-width: max-content;
+    align-items: end;
+}
+
+
+.title { 
+    text-align: start;
+    position: relative;
+    top: 40px;
+    font-size: 50px;
+}
+
+h2 {
+    position: relative;
+    top: 15px;
+    text-align: end;
+    font-size: 20px;
+}
+
+.display-panel {
+    height: 60px;
+    background-color: var(--screen-background);
+    padding: 15px 0;
+    margin: 20px auto;
+    min-width: 340px;
+    max-width: 420px;
+    font-size: 32px;
+    text-align: right;      
+}
+
+.display-panel div {
+    transform: translateX(-20px);
+}
+
+.previous-operand {
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.current-operand {
+    /* position: absolute; */
+}
+
+.switcher-button {
+    background-color: var(--toggle-background);
+}
+
+/* Theme switcher */
+
+.switcher-button {
+    height: 30px;
+    width: 100px;
+    border-radius: 15px;
+    position: relative;
+    left: 10px;
+}
+
+input {
+    position: relative;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    top: 7.5px;
+}
+
+input:checked {
+    background-color: var(--toggle-key-background);
+    position: relative;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    top: 7.5px;
+}
+
+input[id="dark"] {left: -10px;}
+input[id="dracula"] {right: -10px;}
+label {position: absolute; top: -22px;}
+label[for="dark"] {left: 15px;}
+label[for="light"] {left: 45px;}
+label[for="dracula"] {left: 75px;}
+
+                    /* Key section */
+
+
+.calculator-keys {
+    font-size: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(70px, 90px));
+    grid-template-rows: repeat(5, 70px);
+    justify-content: center;
+    gap: 20px 10px;
+    /* width: 50%;  */
+    background-color: var(--toggle-background);
+    padding: 15px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.calculator-keys button {
+    line-height: 70px;
+    background-color: var(--orange-key-background);
+    color: var(--dark-text);
+    padding: 0;
+    box-shadow: 0px 5px var(--orange-key-shadow);
+}
+
+.calculator-keys button:hover {
+    cursor: pointer;
+}
+
+.calculator-keys button:active {
+    transform: translateY(3px);
+    background-color: white;
+}
+
+#reset { 
+    font-size: 20px;
+    grid-area: 5 / 1 / 6 / 3;
+    background-color: var(--key-background);
+    color: var(--light-text);
+    box-shadow: 0px 5px var(--key-shadow);
+}
+
+
+#equal {
+    font-size: 20px;
+    grid-area: 5 / 3 / 6 / 5;
+    background-color: var(--toggle-key-background);
+    color: var(--light-text);
+    box-shadow: 0px 5px var(--toggle-key-shadow);
+ }
+
+#delete { 
+    font-size: 20px;
+    background-color: var(--key-background);
+    color: var(--light-text);
+    box-shadow: 0px 5px var(--key-shadow);
+}
+
+                    /* frontend Mentor attribution */
+                    
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+

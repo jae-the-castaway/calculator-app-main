@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Calculator app</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+  <div class="calculator">
+    <header class="calculator-display">
+      <div class="title-panel">
+        <h1 class="title">calc</h1>
+        <h2>THEME</h2>
+        <div class="theme-switcher">
+          <div class="switcher-button">
+            <input checked type="radio" id="dark" name="theme">
+            <label for="dark">1</label>
+            <input type="radio" id="light" name="theme">
+            <label for="light">2</label>
+            <input type="radio" id="dracula" name="theme">
+            <label for="dracula">3</label>
+          </div>
+        </div>
+      </div>
+      <main class="display-panel">
+        <div class="previous-operand"></div>
+        <div class="current-operand">0</div>
+      </main>
+    </header>
+    <div class="calculator-keys">
+        <button id="num-7">7</button>
+        <button id="num-8">8</button>
+        <button id="num-9">9</button>
+        <button id="delete" data-action="delete" >DEL</button>
+        <button id="num-4">4</button>
+        <button id="num-5">5</button>
+        <button id="num-6">6</button>
+        <button class="key-operator" data-action="add" id="addition">+</button>
+        <button id="num-1">1</button>
+        <button id="num-2">2</button>
+        <button id="num-3">3</button>
+        <button class="key-operator" data-action="subtract" id="subtract">-</button>
+        <button id="decimal" data-action="decimal" >.</button>
+        <button id="num-0">0</button>
+        <button class="key-operator" data-action="divide" id="divide">/</button>
+        <button class="key-operator" data-action="multiply" id="multiply">x</button>
+        <button id="reset" data-action="reset">RESET</button>
+        <button class="key-equal" data-action="calculate" id="equal">=</button>
+    </div>
+  </div>
+
+
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jaeheon Kim</a>.
+  </footer>
+  <script src="./index.js"></script>
+</body>
+</html>
