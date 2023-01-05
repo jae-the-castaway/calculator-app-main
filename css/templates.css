@@ -136,9 +136,6 @@
                     :root:has(#dracula:checked) #equal {
                         color: var(--dark-text);
                     }
-                    :root:has(#dracula:checked) button:active {
-                    }
-
                     /* Additional changes */
 
 #reset:active, #delete:active {
