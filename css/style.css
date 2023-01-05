@@ -138,7 +138,7 @@ label[for="dracula"] {left: 75px;}
     cursor: pointer;
 }
 
-.calculator-keys button:active {
+.keypad button:active {
     transform: translateY(3px);
     background-color: white;
 }
