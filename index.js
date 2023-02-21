@@ -9,7 +9,6 @@ const colorThemes = document.querySelectorAll('[name="theme"]');
 const currentTheme = localStorage.getItem("theme");
 const darkTheme = document.getElementById("dark");
 
-// on load, set theme to previous theme using localstorage
 function setTheme() {
     colorThemes.forEach((theme) =>{
         if (currentTheme === theme.id) {
@@ -17,7 +16,6 @@ function setTheme() {
         }
     });
 } 
-// when click, toggle theme class and set local storage
 colorThemes.forEach((theme) => {
     theme.addEventListener("click", () => {
         document.body.className = theme.id;
@@ -26,21 +24,16 @@ colorThemes.forEach((theme) => {
     })
 })
 
-document.onload = setTheme(); // on load, fire setTheme function
+document.onload = setTheme();
 
-
-// listen to key-presses
 keys.addEventListener('click', e => {
-    if (!e.target.matches('button')) return
-
     const key = e.target
+    if (!key.matches('button')) return
+    console.log(key.dataset.action)
     const displayedNum = display.textContent
 
-    const resultString = createResultString(key, displayedNum, calculator.dataset)
-    const subResultString = createSubResultString(key, displayedNum, calculator.dataset)
-    
-    subDisplay.textContent = subResultString
-    display.textContent = resultString
+    subDisplay.textContent = createSubResultString(key, displayedNum, calculator.dataset)
+    display.textContent = createResultString(key, displayedNum, calculator.dataset)
     
     updateCalculatorState(key, displayedNum, calculator.dataset)
    });
@@ -123,9 +116,7 @@ const updateCalculatorState = (key, displayedNum, state) => {
     const {action} = key.dataset
     const keyType = getKeyType(key)
     calculator.dataset.previousKeyType = keyType
-    
-    if (keyType === 'number') { /* ... */ }
-    if (keyType === 'decimal') { /* ... */ }
+
     if (keyType === 'operator') {            
         calculator.dataset.operator = action;
 
