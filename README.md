@@ -1,4 +1,4 @@
-<h1 align="center">Frontend Mentor - Calculator app solution</h1>
+<h1 align="center">Responsive Calculator with Multiple Themes </h1>
 
 ![thumbnail](./design/thumbnail.png)
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
@@ -89,7 +89,3 @@ colorThemes.forEach((theme) => {
 ## Author
 <a href="https://github.com/jae-the-castaway" align="center"><img src="https://img.shields.io/github/followers/jae-the-castaway?label=follow%20me%20on%20GitHub%21&style=flat-square" alt="Stars Badge"/></a>
 <a href="https://linkedin.com/in/jae-the-castaway" align="center"><img src="https://img.shields.io/badge/-LinkedIn-0e76a8?style=flat-square&logo=Linkedin&logoColor=white" alt="Stars Badge"/></a>
-<a href="https://instagram.com/jae_the_castaway" align="center"><img src="https://img.shields.io/badge/-Instagram-e4405f?style=flat-square&logo=Instagram&logoColor=white" alt="Stars Badge"/></a>
-
-## Acknowledgments
--
