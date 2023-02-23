@@ -5,7 +5,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [Users are able to](#users-are-able-to)
   - [Screenshot](#screenshot)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -13,13 +13,10 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
-### The challenge
-
-Users should be able to:
+### Users are able to
 
 - See the size of the elements adjust based on their device's screen size
 - Perform mathmatical operations like addition, subtraction, multiplication, and division
@@ -39,45 +36,43 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- HTML, CSS, JavaScript
+- Flexbox, Grid
 - Mobile-first workflow
-- Javascript
-- :root:has(#dark:checked) 
+- CSS :has pseudo-class
+- CSS Custom Properties
+- Windows.localstorage
 
 ### What I learned
 
 ```css
 /* css */
-:root:has(#dark:checked) {
-  --main-background: hsl(222, 26%, 31%);
-  --toggle-background: hsl(223, 31%, 20%);
-  --screen-background: hsl(224, 36%, 15%);
-  /*...*/
-}
+:root:has(#dark:checked),
 body.dark {
   --main-background: hsl(222, 26%, 31%);
   --toggle-background: hsl(223, 31%, 20%);
   --screen-background: hsl(224, 36%, 15%);
   /*...*/
 }
-/* uses css pseudo-class :has with fallback */
 ```
-
+I utilized `:has` to switch the color theme of the calculator. However, currently (Feb 2023) `:has` is not compatible with Firefox and Samsung Browser. so I made a fallback for better compatibility.
 ```js
-// javascript
-
-colorThemes.forEach((theme) => {
-    theme.addEventListener("click", () => {
-        document.body.className = theme.id;
-        theme.checked = true;
-        localStorage.setItem("theme", theme.id )
-    })
-})
-// when click, toggle theme class and set local storage
+// javascript, prefers-color-scheme
+lightMode.addEventListener("change", (e) => {
+  if (e.matches) {
+    document.body.className = lightTheme.id;
+    lightTheme.checked = true;
+    localStorage.setItem("theme", "light");
+  } else {
+    document.body.className = darkTheme.id;
+    darkTheme.checked = true;
+    localStorage.setItem("theme", "dark");
+  }
+});
 ```
+Using `window.matchMedia.matches` with `prefers-color-scheme`, Users can have their initial theme preferene checked and have any additional changes saved in the browser with `localstorage`.
+
+
 ### Continued development
 - add a feature that copy with one click could be added next to main display
 
