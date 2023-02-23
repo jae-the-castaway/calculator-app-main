@@ -1,7 +1,9 @@
 <h1 align="center">Responsive Calculator with Multiple Themes </h1>
 
+
 ![thumbnail](./design/thumbnail.png)
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
+It's a calculator app with multiple themes using pure CSS and JavaScript.
+
 ## Table of contents
 
 - [Overview](#overview)
@@ -21,7 +23,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 - See the size of the elements adjust based on their device's screen size
 - Perform mathmatical operations like addition, subtraction, multiplication, and division
 - Adjust the color theme based on their preference
-- **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
+- Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
 ### Screenshot
 
@@ -80,6 +82,7 @@ Using `window.matchMedia.matches` with `prefers-color-scheme`, Users can have th
 
 - [How to build an HTML calculator app from scratch using JavaScript](https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [JavaScript DOM Tutorial – How to Build a Calculator App in JS](https://www.freecodecamp.org/news/javascript-dom-build-a-calculator-app/)
+- This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 
 ## Author
 <a href="https://github.com/jae-the-castaway" align="center"><img src="https://img.shields.io/github/followers/jae-the-castaway?label=follow%20me%20on%20GitHub%21&style=flat-square" alt="Stars Badge"/></a>
