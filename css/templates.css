@@ -1,5 +1,6 @@
-/* Custom properties for fallback */
+/* Custom properties with :has */
 
+:root:has(#dark:checked),
 body.dark {
   --main-background: hsl(222, 26%, 31%);
   --toggle-background: hsl(223, 31%, 20%);
@@ -16,6 +17,7 @@ body.dark {
   --light-text: hsl(0, 0%, 100%);
 }
 
+:root:has(#light:checked),
 body.light {
   --main-background: hsl(0, 0%, 90%);
   --toggle-background: hsl(0, 5%, 81%);
@@ -32,77 +34,8 @@ body.light {
   --light-text: hsl(0, 0%, 100%);
 }
 
+:root:has(#dracula:checked),
 body.dracula {
-  --main-background: hsl(268, 75%, 9%);
-  --toggle-background: hsl(268, 71%, 12%);
-  --screen-background: hsl(268, 71%, 12%);
-
-  --key-background: hsl(281, 89%, 26%);
-  --key-shadow: hsl(285, 91%, 52%);
-  --toggle-key-background: hsl(176, 100%, 44%);
-  --toggle-key-shadow: hsl(177, 92%, 70%);
-  --orange-key-background: hsl(268, 47%, 21%);
-  --orange-key-shadow: hsl(290, 70%, 36%);
-
-  --light-yellow: hsl(52, 100%, 62%);
-  --dark-text: hsl(198, 20%, 13%);
-  --light-text: hsl(0, 0%, 100%);
-}
-
-:root.light .title-panel,
-:root.light .display-panel {
-  color: var(--dark-text);
-}
-
-:root.dracula .title-panel,
-:root.dracula .display-panel,
-:root.dracula button {
-  color: var(--light-yellow);
-}
-
-:root.dracula #equal {
-  color: var(--dark-text);
-}
-
-:root.dracula button:active {
-  box-shadow: 0px 5px hsl(290, 70%, 26%);
-}
-
-/* Custom properties with :has */
-
-:root:has(#dark:checked) {
-  --main-background: hsl(222, 26%, 31%);
-  --toggle-background: hsl(223, 31%, 20%);
-  --screen-background: hsl(224, 36%, 15%);
-
-  --key-background: hsl(225, 21%, 49%);
-  --key-shadow: hsl(224, 28%, 35%);
-  --toggle-key-background: hsl(6, 63%, 50%);
-  --toggle-key-shadow: hsl(6, 70%, 34%);
-  --orange-key-background: hsl(30, 25%, 89%);
-  --orange-key-shadow: hsl(28, 16%, 65%);
-
-  --dark-text: hsl(221, 14%, 31%);
-  --light-text: hsl(0, 0%, 100%);
-}
-
-:root:has(#light:checked) {
-  --main-background: hsl(0, 0%, 90%);
-  --toggle-background: hsl(0, 5%, 81%);
-  --screen-background: hsl(0, 0%, 93%);
-
-  --key-background: hsl(185, 42%, 37%);
-  --key-shadow: hsl(185, 58%, 25%);
-  --toggle-key-background: hsl(25, 98%, 40%);
-  --toggle-key-shadow: hsl(25, 99%, 27%);
-  --orange-key-background: hsl(45, 7%, 89%);
-  --orange-key-shadow: hsl(35, 11%, 61%);
-
-  --dark-text: hsl(60, 10%, 19%);
-  --light-text: hsl(0, 0%, 100%);
-}
-
-:root:has(#dracula:checked) {
   --main-background: hsl(268, 75%, 9%);
   --toggle-background: hsl(268, 71%, 12%);
   --screen-background: hsl(268, 71%, 12%);
@@ -120,59 +53,55 @@ body.dracula {
 }
 :root:has(#dracula:checked) .title-panel,
 :root:has(#dracula:checked) .display-panel,
-:root:has(#dracula:checked) button {
+:root:has(#dracula:checked) button,
+:root:has(#dracula:checked) .attribution,
+:root:has(#dracula:checked) .attribution a,
+body.dracula .title-panel,
+body.dracula .display-panel,
+body.dracula button,
+body.dracula .attribution,
+body.dracula .attribution a {
   color: var(--light-yellow);
 }
-:root:has(#dracula:checked) #reset,
-:root:has(#dracula:checked) #delete {
-  color: white;
-}
 
-:root:has(#dracula:checked) #equal {
+:root:has(#dracula:checked) #equal,
+body.dracula #equal {
   color: var(--dark-text);
-}
-/* Additional changes */
-
-#reset:active,
-#delete:active {
-  background-color: hsl(225, 21%, 59%);
-}
-
-#equal:active {
-  background-color: hsl(6, 63%, 60%);
 }
 
 :root:has(#light:checked) .title-panel,
-:root:has(#light:checked) .display-panel {
+:root:has(#light:checked) .display-panel,
+:root:has(#light:checked) .attribution,
+:root:has(#light:checked) .attribution a,
+body.light .title-panel,
+body.light .display-panel,
+body.light .attribution,
+body.light .attribution a,
+body.dracula #equal,
+:root:has(#dracula:checked) #equal {
   color: var(--dark-text);
 }
 
 :root:has(#light:checked) #delete:active,
-:root:has(#light:checked) #reset:active {
+:root:has(#light:checked) #reset:active,
+body.light #delete:active,
+body.light #reset:active {
   background-color: hsl(185, 42%, 47%);
 }
 
-:root:has(#dracula:checked) #equal:active {
+:root:has(#dracula:checked) #equal:active,
+body.dracula #equal:active {
   background-color: hsl(177, 92%, 80%);
 }
 
 :root:has(#dracula:checked) #delete:active,
-:root:has(#dracula:checked) #reset:active {
+:root:has(#dracula:checked) #reset:active,
+body.dracula #delete:active,
+body.dracula #reset:active {
   background-color: hsl(281, 89%, 36%);
 }
 
-:root:has(#dracula:checked) button:active {
+:root:has(#dracula:checked) button:active,
+body.dracula button:active {
   background-color: hsl(281, 89%, 36%);
 }
-
-
-/* prefers-color-scheme CSS media feature */
-@media (prefers-color-scheme: dark) {
-
-  }
-
-  @media (prefers-color-scheme: light) {
-
-  }
-  
-  
