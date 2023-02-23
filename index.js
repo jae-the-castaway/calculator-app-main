@@ -8,13 +8,27 @@ const keys = document.querySelector(".calculator-keys");
 // variables for theme switch
 const lightMode = window.matchMedia("(prefers-color-scheme: light)");
 const colorThemes = document.querySelectorAll('[name="theme"]');
+const lightTheme = document.getElementById("light");
+const darkTheme = document.getElementById("dark");
+
 // Theme Section
 function setTheme() {
   const currentTheme = localStorage.getItem("theme");
 
+  if (lightMode.matches) {
+    document.body.className = "light";
+    lightTheme.checked = true;
+    localStorage.setItem("theme", "light");
+  } else {
+    document.body.className = "dark";
+    darkTheme.checked = true;
+    localStorage.setItem("theme", "dark");
+  }
+
   colorThemes.forEach((theme) => {
     if (currentTheme === theme.id) {
       theme.checked = true;
+      document.body.className = theme.id;
     }
   });
 }
@@ -29,15 +43,14 @@ colorThemes.forEach((theme) => {
 
 // prefers-color-scheme
 lightMode.addEventListener("change", (e) => {
-  const lightTheme = document.getElementById("light");
-  const darkTheme = document.getElementById("dark");
-
   if (e.matches) {
     document.body.className = lightTheme.id;
     lightTheme.checked = true;
+    localStorage.setItem("theme", "light");
   } else {
     document.body.className = darkTheme.id;
     darkTheme.checked = true;
+    localStorage.setItem("theme", "dark");
   }
 });
 document.onload = setTheme();
