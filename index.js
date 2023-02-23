@@ -5,26 +5,45 @@ const display = document.querySelector('.current-operand');
 const subDisplay = document.querySelector('.previous-operand');
 const keys = document.querySelector(".calculator-keys");
 // variables for theme switch
+const lightMode = window.matchMedia('(prefers-color-scheme: light)');
 const colorThemes = document.querySelectorAll('[name="theme"]');
-const currentTheme = localStorage.getItem("theme");
-const darkTheme = document.getElementById("dark");
 
+// Theme Section
 function setTheme() {
+    const currentTheme = localStorage.getItem("theme");
+    
     colorThemes.forEach((theme) =>{
         if (currentTheme === theme.id) {
             theme.checked = true;
         }
     });
-} 
+};
+
 colorThemes.forEach((theme) => {
     theme.addEventListener("click", () => {
         document.body.className = theme.id;
         theme.checked = true;
         localStorage.setItem("theme", theme.id )
     })
-})
+});
+
+lightMode.addEventListener("change", e => { 
+    const lightTheme = document.getElementById("light");
+    const darkTheme = document.getElementById("dark");
+    
+    if (e.matches) {
+        document.body.className = lightTheme.id;
+        lightTheme.checked = true;
+    } else {
+        document.body.className = darkTheme.id;
+        darkTheme.checked = true;
+    }
+});
 
 document.onload = setTheme();
+
+
+// Key Section
 
 keys.addEventListener('click', e => {
     const key = e.target
