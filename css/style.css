@@ -180,10 +180,10 @@ label[for="dracula"] {
 .attribution {
   font-size: 11px;
   text-align: center;
-  color: var(--dark-text);
-}
-.attribution a {
-  color: var(--dark-text);
+  color: var(--light-text);
 }
 
+.attribution a {
+  color: var(--light-text);
+}
 
